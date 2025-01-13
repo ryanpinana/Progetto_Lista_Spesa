@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Prodotto {
+    - String nome
+    - double prezzo
+    - int quantita
+    + Prodotto(String nome, double prezzo, int quantita)
+    + String getNome()
+    + double getPrezzo()
+    + int getQuantita()
+    + String toString()
+}
+
+class Negozio {
+    - String nome
+    - String indirizzo
+    - ArrayList<Prodotto> catalogo
+    + Negozio(String nome, String indirizzo)
+    + String getNome()
+    + String getIndirizzo()
+    + ArrayList<Prodotto> getCatalogo()
+    + void aggiungiProdotto(Prodotto prodotto)
+    + boolean rimuoviProdotto(String nomeProdotto)
+    + String toString()
+}
+
+class Lista {
+    - String nome
+    - Negozio negozio
+    - ArrayList<Prodotto> prodotti
+    + Lista(String nome, Negozio negozio)
+    + void aggiungiProdotto(String nomeProdotto, int quantita)
+    + void salvaListaInFile()
+    + String toString()
+}
+
+class Program {
+    - static Scanner scanner
+    + static void main(String[] args)
+    + static void creaNuovaLista(ArrayList<Negozio> negozi, ArrayList<Lista> liste)
+    + static void visualizzaListaDaFile()
+    + static void visualizzaCatalogoNegozio(ArrayList<Negozio> negozi)
+}
+
+Prodotto "1" *-- "n" Negozio
+Lista "1" *-- "1" Negozio
+Lista "1" *-- "n" Prodotto
+Program ..> Negozio
+Program ..> Lista
+
+@enduml

@@ -1,0 +1,5 @@
+Lista della spesa: listaTest
+Negozio: Supermercato ABC
+
+Latte - Prezzo: 1.5 €, Quantità: 3
+Pasta - Prezzo: 1.2 €, Quantità: 1
