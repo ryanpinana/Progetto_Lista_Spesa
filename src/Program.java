@@ -1,3 +1,10 @@
+/*
+*Programma per la gestione e creazione di liste della spesa
+*
+* @author Ryan Pinana
+* @version 14/1/2025
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -56,6 +63,10 @@ public class Program {
         }
     }
 
+    /*metodo per la creazione di liste
+    * @param negozi Lista di negozi disponibili
+    * @param liste Lista di liste già esistenti
+     */
     private static void creaNuovaLista(ArrayList<Negozio> negozi, ArrayList<Lista> liste) {
         System.out.print("Inserisci il nome della lista: ");
         String nomeLista = scanner.nextLine();
@@ -108,6 +119,7 @@ public class Program {
         liste.add(nuovaLista);
     }
 
+    //metodo per visualizzare una lista esistente
     private static void visualizzaListaDaFile() {
         System.out.print("Inserisci il nome del file della lista da visualizzare (senza estensione): ");
         String nomeFile = scanner.nextLine();
@@ -128,6 +140,8 @@ public class Program {
         }
     }
 
+    //metodo per visualizzare un catalogo di un negozio
+    //@param negozi La lista dei negozi disponibili
     private static void visualizzaCatalogoNegozio(ArrayList<Negozio> negozi) {
         if (negozi.isEmpty()) {
             System.out.println("Nessun negozio disponibile.");

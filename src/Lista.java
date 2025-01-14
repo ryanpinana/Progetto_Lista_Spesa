@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//Classe utilizzata per aggiungere dei prodotti ad una lista e a salvare una lista
 public class Lista {
     private String nome;
     private Negozio negozio;
@@ -14,6 +15,10 @@ public class Lista {
         this.prodotti = new ArrayList<>();
     }
 
+    /*Metodo per aggiungere un prodotto alla lista
+    * @param nomeProdotto Nome del prodotto che verrà aggiunto alla lista
+    * @param quantita Quantità del prodotto che verrà aggiunto alla lista
+     */
     public void aggiungiProdotto(String nomeProdotto, int quantita) {
         for (Prodotto prodotto : negozio.getCatalogo()) {
             if (prodotto.getNome().equalsIgnoreCase(nomeProdotto)) {  // IgnoreCase da StackOverflow, ignora maiuscole e minuscole
@@ -26,9 +31,10 @@ public class Lista {
     }
 
     /*
-    BufferWriter e FileWriter grazie a Chat GPT,
-    metodo di lettura e scrittura molto efficente ed unico che funziona
-    Con Files e Paths non so perchè non funzionava.
+    * BufferWriter e FileWriter grazie a Chat GPT,
+    * metodo di lettura e scrittura molto efficente ed unico che funziona
+    * Con Files e Paths non so perchè non funzionava.
+    * Metodo per salvatre la lista in un file txt
      */
     public void salvaListaInFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nome + ".txt"))) {

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//Classe per la gestione dei Negozi
 public class Negozio {
     private String nome;
     private String indirizzo;

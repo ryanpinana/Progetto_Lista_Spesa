@@ -1,3 +1,4 @@
+//Classe per la gestione dei prodotti
 public class Prodotto {
     private String nome;
     private double prezzo;
